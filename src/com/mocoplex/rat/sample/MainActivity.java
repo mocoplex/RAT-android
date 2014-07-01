@@ -51,7 +51,8 @@ public class MainActivity extends Activity {
 	
 	protected void parseCustomScheme() {
 		Uri data = getIntent().getData();
-       if(data != null) { // custom schema 통해 들어온 경우           
+		
+		if(data != null) { // custom schema 통해 들어온 경우           
            // EX) rat://view?pid=123;
            String pid = data.getQueryParameter("pid");          
 
@@ -132,23 +133,23 @@ public class MainActivity extends Activity {
 		// 사용자정의 태그 로깅
 		public void customTag(String pid) {
 			
-			JSONObject v = new JSONObject();
+			JSONObject jsonObj = new JSONObject();
 			
 			try {
 				// 사용자 정의 추가 변수 저장
-				v.put("pid", pid);
-				v.put("category", "cloth");
-				v.put("price", "1000000");
-				v.put("qty", "10");
-				v.put("name", "청바지");
+				jsonObj.put("pid", pid);
+				jsonObj.put("category", "cloth");
+				jsonObj.put("price", "1000000");
+				jsonObj.put("qty", "10");
+				jsonObj.put("name", "청바지");
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}
 			
 			// RAT SDK 호출 (custom tag)
-			// 태그 이름 : TAG_NAME
-			// 추가 parameter : v (json)
-			Tracker.getInstance().tag(context, "TAG_NAME", v);
+			// User-Defined-TagName : 원하는 태그명 정의
+			// jsonObj : 기록을 원하는 JSON 형태의 데이터
+			Tracker.getInstance().custom_tag(context, "User-Defined-TagName", jsonObj);
 		}
 	}
 	
