@@ -30,11 +30,8 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		// 트래킹 연동을 위해 필수로 호출되어야 합니다. (인스톨 트래킹)
+		// 트래킹 연동을 위해 필수로 호출되어야 합니다. (트래킹 초기화)
 		Tracker.getInstance().init(this);
-		
-		// 트래킹 연동을 위해 필수로 호출되어야 합니다. (태그 전환 트래킹)
-		Tracker.getInstance().init_tag(this, getIntent().getData());
 		
 		// 커스텀 스키마에 대해 처리를 합니다. (옵션)
 		parseCustomScheme();
@@ -149,7 +146,7 @@ public class MainActivity extends Activity {
 			// RAT SDK 호출 (custom tag)
 			// User-Defined-TagName : 원하는 태그명 정의
 			// jsonObj : 기록을 원하는 JSON 형태의 데이터
-			Tracker.getInstance().custom_tag(context, "User-Defined-TagName", jsonObj);
+			Tracker.getInstance().customTag(context, "User-Defined-TagName", jsonObj);
 		}
 	}
 	
