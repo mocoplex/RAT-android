@@ -30,6 +30,9 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
+		// 테스트의 경우 true (로그 출력)
+		Tracker.getInstance().setDebug(true);
+		
 		// 트래킹 연동을 위해 필수로 호출되어야 합니다. (트래킹 초기화)
 		Tracker.getInstance().init(this);
 		
