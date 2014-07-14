@@ -48,6 +48,8 @@
 		</receiver>
 		
 		<meta-data android:name="ADLIB_RAT_KEY" android:value="INSERT_YOUR_ADLIB_RAT_KEY" />
+		
+		<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
 		<!-- 애드립 RAT 필수구현 -->
         
     </application>
