@@ -33,7 +33,7 @@ public class MainActivity extends Activity {
 		// 테스트의 경우 true (로그 출력)
 		Tracker.getInstance().setDebug(true);
 		
-		// 트래킹 연동을 위해 필수로 호출되어야 합니다. (트래킹 초기화)
+		// 트래킹 연동을 위해 필수로 호출되어야 합니다. (초기화)
 		Tracker.getInstance().init(this);
 		
 		// 커스텀 스키마에 대해 처리를 합니다. (옵션)
@@ -87,7 +87,15 @@ public class MainActivity extends Activity {
 		m_webView.setWebViewClient(new MyWebViewClient());
 		m_webView.loadUrl("http://demo.mocoplex.com/rat/detail.html?item=" + pid);
 		
-		Tracker.getInstance().view(this, pid);
+		JSONObject jsonObj = new JSONObject();
+		try {
+			jsonObj.put("pid", pid);
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		
+		// RAT SDK 호출 (view)
+		Tracker.getInstance().view(this, jsonObj);
 	}
 	 
 	class MyWebViewClient extends WebViewClient {
@@ -96,6 +104,57 @@ public class MainActivity extends Activity {
 		     view.loadUrl(url);
 		    return true;  
 		 }
+		 
+		 @Override
+		public void onPageFinished(WebView view, String url) {
+			// TODO Auto-generated method stub
+			super.onPageFinished(view, url);
+			
+			// 특정 페이지(URL)을 트래킹 하는 경우
+			
+			if(url.indexOf("http://www.abc.com/example/test.php") > 0){
+				try {
+					JSONObject jsonObj = new JSONObject();
+					// 사용자 정의 추가 변수 저장
+					jsonObj.put("url", url);
+					
+					trackUrlInfo("EVENT_PAGE", jsonObj);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			
+			// 동적인 페이지 구성 (특정 파라미터값으로 전송)
+			
+			String chkParam = "adlib_trk=";
+			
+			if(url.indexOf(chkParam) > 0){
+				 
+				try {
+					
+					String tagName = "";
+					String param = url.substring(url.indexOf(chkParam));
+					if(param.indexOf("&") > 0){
+						tagName = param.substring(chkParam.length(), param.indexOf("&"));
+					}else{
+						tagName = param.substring(chkParam.length());
+					}
+					
+					JSONObject jsonObj = new JSONObject();
+					// 사용자 정의 추가 변수 저장
+					jsonObj.put("url", url);
+					
+					trackUrlInfo(tagName, jsonObj);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			 }
+		}
+	}
+	
+	public void trackUrlInfo(String tagName, JSONObject value) {
+		// RAT SDK 호출 (custom tag)
+		Tracker.getInstance().customTag(this, tagName, value);
 	}
 	
 	
@@ -110,24 +169,46 @@ public class MainActivity extends Activity {
 		
 		// 상세 페이지 로깅
 		public void view(String pid) {
+			
+			JSONObject jsonObj = new JSONObject();
+			try {
+				jsonObj.put("pid", pid);
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+			
 			// RAT SDK 호출 (view)
-			Tracker.getInstance().view(context, pid);
+			Tracker.getInstance().view(context, jsonObj);
 		}
 		
 		// 카트 로깅
 		public void cart(String pid) {
 			Toast.makeText(context, "Item added to Cart.", Toast.LENGTH_SHORT).show();
 			
+			JSONObject jsonObj = new JSONObject();
+			try {
+				jsonObj.put("pid", pid);
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+			
 			// RAT SDK 호출 (cart)
-			Tracker.getInstance().cart(context, pid);
+			Tracker.getInstance().cart(context, jsonObj);
 		}
 		
 		// 구매 로깅
 		public void buy(String pid) {
 			Toast.makeText(context, "Thank you.", Toast.LENGTH_SHORT).show();
 			
+			JSONObject jsonObj = new JSONObject();
+			try {
+				jsonObj.put("pid", pid);
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+			
 			// RAT SDK 호출 (buy)
-			Tracker.getInstance().buy(context, pid);
+			Tracker.getInstance().buy(context, jsonObj);
 		}
 		
 		// 사용자정의 태그 로깅
@@ -142,7 +223,7 @@ public class MainActivity extends Activity {
 				jsonObj.put("price", "1000000");
 				jsonObj.put("qty", "10");
 				jsonObj.put("name", "청바지");
-			} catch (JSONException e) {
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			
