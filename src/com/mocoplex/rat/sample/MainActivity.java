@@ -110,6 +110,8 @@ public class MainActivity extends Activity {
 			// TODO Auto-generated method stub
 			super.onPageFinished(view, url);
 			
+			// --------- 필요에 따라 아래와 같은 형태로 구현 가능 합니다. --------------
+			
 			// 특정 페이지(URL)을 트래킹 하는 경우
 			
 			if(url.indexOf("http://www.abc.com/example/test.php") > 0){
@@ -124,7 +126,7 @@ public class MainActivity extends Activity {
 				}
 			}
 			
-			// 동적인 페이지 구성 (특정 파라미터값으로 전송)
+			// 동적인 페이지 구성 하는 경우 (특정 파라미터값으로 전송)
 			
 			String chkParam = "adlib_trk=";
 			
