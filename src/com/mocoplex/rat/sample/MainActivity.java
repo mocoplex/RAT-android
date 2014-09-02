@@ -8,6 +8,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -74,7 +75,7 @@ public class MainActivity extends Activity {
 	protected void showMain() {
 		m_webView = (WebView)findViewById(R.id.webView);
 		m_webView.getSettings().setJavaScriptEnabled(true);
-		m_webView.addJavascriptInterface(new JavaScriptInterface(getApplicationContext()), "android");
+		m_webView.addJavascriptInterface(new JavaScriptInterface(getApplicationContext()), "AdlibTrkSdk");
 		m_webView.setWebViewClient(new MyWebViewClient());
 		m_webView.loadUrl("http://demo.mocoplex.com/rat/index.html");
 	}
@@ -83,7 +84,7 @@ public class MainActivity extends Activity {
 	protected void showDetail(String pid) {
 		m_webView = (WebView)findViewById(R.id.webView);
 		m_webView.getSettings().setJavaScriptEnabled(true);
-		m_webView.addJavascriptInterface(new JavaScriptInterface(getApplicationContext()), "android");
+		m_webView.addJavascriptInterface(new JavaScriptInterface(getApplicationContext()), "AdlibTrkSdk");
 		m_webView.setWebViewClient(new MyWebViewClient());
 		m_webView.loadUrl("http://demo.mocoplex.com/rat/detail.html?item=" + pid);
 		
@@ -160,7 +161,7 @@ public class MainActivity extends Activity {
 	}
 	
 	
-	// 웹 페이지의 자바스크립트 연동
+	// 웹 페이지의 자바스크립트 연동 (하이브리드 형태인 경우 구현)
 	class JavaScriptInterface {
 		
 		Context context;
@@ -169,70 +170,65 @@ public class MainActivity extends Activity {
 			context = ctx;
 		}
 		
-		// 상세 페이지 로깅
-		public void view(String pid) {
+		// 상세 페이지 로깅 (tagValue : JSON 형태의 스트링)
+		public void view(String tagValue) {
 			
-			JSONObject jsonObj = new JSONObject();
+			JSONObject jsonObj = null;
 			try {
-				jsonObj.put("pid", pid);
+				jsonObj = new JSONObject(tagValue);
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}
 			
 			// RAT SDK 호출 (view)
-			Tracker.getInstance().view(context, jsonObj);
+			if(jsonObj != null) Tracker.getInstance().view(context, jsonObj);
 		}
 		
-		// 카트 로깅
-		public void cart(String pid) {
-			Toast.makeText(context, "Item added to Cart.", Toast.LENGTH_SHORT).show();
-			
-			JSONObject jsonObj = new JSONObject();
+		// 카트 로깅 (tagValue : JSON 형태의 스트링)
+		public void cart(String tagValue) {
+			JSONObject jsonObj = null;
 			try {
-				jsonObj.put("pid", pid);
+				jsonObj = new JSONObject(tagValue);
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}
 			
 			// RAT SDK 호출 (cart)
-			Tracker.getInstance().cart(context, jsonObj);
+			if(jsonObj != null) Tracker.getInstance().cart(context, jsonObj);
 		}
 		
-		// 구매 로깅
-		public void buy(String pid) {
-			Toast.makeText(context, "Thank you.", Toast.LENGTH_SHORT).show();
-			
-			JSONObject jsonObj = new JSONObject();
+		// 구매 로깅 (tagValue : JSON 형태의 스트링)
+		public void buy(String tagValue) {
+			JSONObject jsonObj = null;
 			try {
-				jsonObj.put("pid", pid);
+				jsonObj = new JSONObject(tagValue);
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}
 			
 			// RAT SDK 호출 (buy)
-			Tracker.getInstance().buy(context, jsonObj);
+			if(jsonObj != null) Tracker.getInstance().buy(context, jsonObj);
 		}
 		
-		// 사용자정의 태그 로깅
-		public void customTag(String pid) {
+		// 사용자정의 태그 로깅 (tagValue : JSON 형태의 스트링)
+		public void customTag(String tagName, String tagValue) {
 			
-			JSONObject jsonObj = new JSONObject();
-			
+			JSONObject jsonObj = null;
 			try {
-				// 사용자 정의 추가 변수 저장
-				jsonObj.put("pid", pid);
-				jsonObj.put("category", "cloth");
-				jsonObj.put("price", "1000000");
-				jsonObj.put("qty", "10");
-				jsonObj.put("name", "청바지");
-			} catch (Exception e) {
+				jsonObj = new JSONObject(tagValue);
+			} catch (JSONException e) {
 				e.printStackTrace();
 			}
 			
 			// RAT SDK 호출 (custom tag)
-			// User-Defined-TagName : 원하는 태그명 정의
+			// tagName : 원하는 태그명 정의
 			// jsonObj : 기록을 원하는 JSON 형태의 데이터
-			Tracker.getInstance().customTag(context, "User-Defined-TagName", jsonObj);
+			if(jsonObj != null) Tracker.getInstance().customTag(context, tagName, jsonObj);
+		}
+		
+		// 메시지 처리
+		public void message(String msg){
+			Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
 		}
 	}
 	
