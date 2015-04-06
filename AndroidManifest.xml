@@ -3,7 +3,7 @@
     package="com.mocoplex.rat.sample"
     android:versionCode="1"
     android:versionName="1.0" >
-
+    
     <uses-sdk android:minSdkVersion="9" />
     
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,32 +12,41 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme" >        
         
-        <!-- 구글 광고 ID 사용을 위해 꼭 추가해주세요. -->
-        <meta-data android:name="com.google.android.gms.version" 
-            android:value="@integer/google_play_services_version" />
-        
+
         <activity
-            android:name="com.mocoplex.rat.sample.MainActivity"
+            android:name="com.mocoplex.rat.sample.NativeActivity"
             android:label="@string/app_name" >
+
+<!--  
+        <activity
+            android:name="com.mocoplex.rat.sample.HybridActivity"
+            android:label="@string/app_name" >
+//-->
+
+<!-- for criteo
+        <activity
+            android:name="com.mocoplex.rat.sample.criteo.NativeActivity"
+            android:label="@string/app_name" >
+  
+        <activity
+            android:name="com.mocoplex.rat.sample.criteo.HybridActivity"
+            android:label="@string/app_name" >
+//-->
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            
-			<!-- 애드립 init activity -->
-			<intent-filter>
-				<action android:name="android.intent.action.VIEW"/>
-				<category android:name="android.intent.category.DEFAULT"/>
-				<category android:name="android.intent.category.BROWSABLE"/>
-			
-				<!-- rat:// --> 
-				<data android:scheme="INSERT_YOUR_CUSTOM_SCHEME_NAME"/>	
-			</intent-filter>
-			<!-- 애드립 init activity -->
+                        
+        <!-- 구글 광고 ID 사용을 위해 꼭 추가해주세요. -->
+        <meta-data android:name="com.google.android.gms.version" 
+            android:value="@integer/google_play_services_version" />
 
         </activity>
+
         
 		<!-- 애드립 RAT 필수구현 -->
 		<receiver android:name="com.mocoplex.rat.Receiver" android:exported="true">
@@ -45,10 +54,7 @@
 		      <action android:name="com.android.vending.INSTALL_REFERRER" />
 		  </intent-filter>
 		</receiver>
-		
-		<meta-data android:name="ADLIB_RAT_KEY" android:value="INSERT_YOUR_ADLIB_RAT_KEY" />
+		<meta-data android:name="ADLIB_RAT_KEY" android:value="541fdc670cf2fa35868c646e" />
 		<!-- 애드립 RAT 필수구현 -->
-        
-    </application>
-
+	</application>
 </manifest>

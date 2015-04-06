@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+     >
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:paddingBottom="10dp"
+        android:text="애드립 RATxCRITEO Native 샘플 페이지" />
+    
+    <Button
+        android:id="@+id/home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="메인 페이지 이벤트 전달" />
+
+    <Button
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="상품 보기 이벤트 전달" />
+
+    <Button
+        android:id="@+id/listing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="카테고리 리스팅 이벤트 전달" />
+
+    <Button
+        android:id="@+id/cart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="장바구니 담기 이벤트 전달" />
+
+    <Button
+        android:id="@+id/buy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="상품 구매 완료 이벤트 전달" />
+
+</LinearLayout>
