@@ -65,7 +65,7 @@ public class NativeActivity extends Activity {
 				try {
 					JSONArray jlist = new JSONArray();
 								
-						String eventname = "viewHome";
+						String eventname = "viewProduct";
 						String prod_no = "상품번호";
 						
 						JSONObject obj = new JSONObject();
