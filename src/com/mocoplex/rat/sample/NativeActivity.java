@@ -39,7 +39,6 @@ public class NativeActivity extends Activity {
 						String prod_no = "상품번호1";
 						
 						JSONObject obj = new JSONObject();
-						obj.put("event", eventname);
 						obj.put("p_no", prod_no);
 						obj.put("name", "상품 이름 입력");
 						obj.put("price", "12300(상품가격 숫자만)");
@@ -73,7 +72,6 @@ public class NativeActivity extends Activity {
 						String prod_no = "상품번호1";
 						
 						JSONObject obj = new JSONObject();
-						obj.put("event", eventname);
 						obj.put("p_no", prod_no);
 						obj.put("name", "상품 이름 입력");
 						obj.put("qty", "상품 수량");
@@ -98,7 +96,6 @@ public class NativeActivity extends Activity {
 					String prod_no = "상품번호2";
 					
 					JSONObject obj = new JSONObject();
-					obj.put("event", eventname);
 					obj.put("p_no", prod_no);
 					obj.put("name", "상품 이름 입력");
 					obj.put("qty", "상품 수량");
@@ -133,7 +130,6 @@ public class NativeActivity extends Activity {
 						String prod_no = "상품번호1";
 						
 						JSONObject obj = new JSONObject();
-						obj.put("event", eventname);
 						obj.put("p_no", prod_no);
 						obj.put("name", "상품 이름 입력");
 						obj.put("qty", "상품 수량");
@@ -158,7 +154,6 @@ public class NativeActivity extends Activity {
 					String prod_no = "상품번호2";
 					
 					JSONObject obj = new JSONObject();
-					obj.put("event", eventname);
 					obj.put("p_no", prod_no);
 					obj.put("name", "상품 이름 입력");
 					obj.put("qty", "상품 수량");
