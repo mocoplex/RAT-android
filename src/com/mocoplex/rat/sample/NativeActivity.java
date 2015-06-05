@@ -48,7 +48,7 @@ public class NativeActivity extends Activity {
 						obj.put("cate2", "카테고리 정보 2, 중분류");
 						obj.put("cate3", "카테고리 정보 3, 소분류");
 
-						obj.put("platform", "mobile");
+						obj.put("platform", "mobile_app");
 						
 					Tracker.getInstance().customTag(NativeActivity.this, eventname, obj);
 					
@@ -82,7 +82,7 @@ public class NativeActivity extends Activity {
 						obj.put("cate2", "카테고리 정보 2, 중분류");
 						obj.put("cate3", "카테고리 정보 3, 소분류");
 	
-						obj.put("platform", "mobile");
+						obj.put("platform", "mobile_app");
 						
 					Tracker.getInstance().customTag(NativeActivity.this, eventname, obj);
 					
@@ -106,7 +106,7 @@ public class NativeActivity extends Activity {
 					obj.put("cate2", "카테고리 정보 2, 중분류");
 					obj.put("cate3", "카테고리 정보 3, 소분류");
 
-					obj.put("platform", "mobile");
+					obj.put("platform", "mobile_app");
 					
 				Tracker.getInstance().customTag(NativeActivity.this, eventname, obj);
 				
@@ -140,7 +140,7 @@ public class NativeActivity extends Activity {
 						obj.put("cate2", "카테고리 정보 2, 중분류");
 						obj.put("cate3", "카테고리 정보 3, 소분류");
 	
-						obj.put("platform", "mobile");
+						obj.put("platform", "mobile_app");
 						
 					Tracker.getInstance().customTag(NativeActivity.this, eventname, obj);
 					
@@ -164,7 +164,7 @@ public class NativeActivity extends Activity {
 					obj.put("cate2", "카테고리 정보 2, 중분류");
 					obj.put("cate3", "카테고리 정보 3, 소분류");
 
-					obj.put("platform", "mobile");
+					obj.put("platform", "mobile_app");
 					
 				Tracker.getInstance().customTag(NativeActivity.this, eventname, obj);
 				

@@ -25,7 +25,7 @@ public class HybridActivity extends Activity {
 
 		// 메인페이지를 웹뷰에서 로드합니다.
 		m_webView = (WebView)findViewById(R.id.webView);
-		m_webView.loadUrl("http://mkt.adlibr.com/rat_sample/hybrid/");		
+		m_webView.loadUrl("http://mkt.adlibr.com/rat_sample/hybrid/index.jsp");		
 		m_webView.setWebChromeClient(new WebChromeClient() {
 			  public void onConsoleMessage(String message, int lineNumber, String sourceID) {
 			    Log.d("MyApplication", message + " -- From line "
@@ -33,7 +33,7 @@ public class HybridActivity extends Activity {
 			                         + sourceID);
 			  }
 			});
-		
+
 		// SDK 와의 연동을 위해 꼭 선언해주어야 합니다.
 		ADLIBrHybridInterface.enableBridgeScript(m_webView, this);
 	}
