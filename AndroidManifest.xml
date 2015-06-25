@@ -56,7 +56,7 @@
 		      <action android:name="com.android.vending.INSTALL_REFERRER" />
 		  </intent-filter>
 		</receiver>
-		<meta-data android:name="ADLIB_RAT_KEY" android:value="556e67cb0cf2e2ab870ba85e" />
+		<meta-data android:name="ADLIB_RAT_KEY" android:value="여기에 발급받은 KEY 값을 입력해주세요." />
 		<!-- 애드립 RAT 필수구현 -->
 	</application>
 </manifest>
