@@ -22,12 +22,12 @@
 
 <!--  
         <activity
-            android:name="com.mocoplex.rat.sample.NativeActivity"
+            android:name="test.rat.sample.NativeActivity"
             android:label="@string/app_name" >
 //-->
 
         <activity
-            android:name="com.mocoplex.rat.sample.HybridActivity"
+            android:name="test.rat.sample.HybridActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
