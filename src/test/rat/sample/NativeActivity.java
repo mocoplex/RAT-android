@@ -1,4 +1,4 @@
-package com.mocoplex.rat.sample;
+package test.rat.sample;
 
 import org.json.JSONArray;
 import org.json.JSONException;

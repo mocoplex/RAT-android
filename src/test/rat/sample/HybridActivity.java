@@ -1,4 +1,4 @@
-package com.mocoplex.rat.sample;
+package test.rat.sample;
 
 import android.app.Activity;
 import android.os.Bundle;

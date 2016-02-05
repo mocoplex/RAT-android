@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mocoplex.rat.sample"
+    package="test.rat.sample"
     android:versionCode="1"
     android:versionName="1.0" >
     
@@ -29,19 +29,6 @@
         <activity
             android:name="com.mocoplex.rat.sample.HybridActivity"
             android:label="@string/app_name" >
-
-
-<!-- for criteo
-        <activity
-            android:name="com.mocoplex.rat.sample.criteo.NativeActivity"
-            android:label="@string/app_name" >
-  
-        <activity
-            android:name="com.mocoplex.rat.sample.criteo.HybridActivity"
-            android:label="@string/app_name" >
-//-->
-
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
