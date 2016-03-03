@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Request" />
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <Button 
+            android:id="@+id/btn_click"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="Clk"
+           	android:onClick="clickButton" />
+        <EditText
+            android:id="@+id/edit_item"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_toLeftOf="@id/btn_click"
+	        android:editable="false" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/edittext"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:editable="false" />
+
+</LinearLayout>
