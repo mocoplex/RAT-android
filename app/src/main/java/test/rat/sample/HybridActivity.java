@@ -30,6 +30,11 @@ public class HybridActivity extends AppCompatActivity {
 			  }
 			});
 		
+		// WebView의 UserAgent에 Hybrid 태그 추가 후 사용자 UserAgent 설정
+		WebSettings webSettings = m_webView.getSettings();
+		StringBuffer userAgent = new StringBuffer(webSettings.getUserAgentString());
+		userAgent.append(";Hybrid");
+		webSettings.setUserAgentString(userAgent.toString());
 		// SDK 와의 연동을 위해 꼭 선언해주어야 합니다.
 		ADLIBrHybridInterface.enableBridgeScript(m_webView, this);
 	}
