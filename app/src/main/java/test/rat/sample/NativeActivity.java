@@ -197,8 +197,7 @@ public class NativeActivity extends AppCompatActivity {
 
 			@Override
 			public void onClick(View arg0) {
-
-				// 여러 상품의 경우 아래와 같이 반복해서 호출해주세요.
+			
 				try {
 					String event = "LIKE";					// 커스텀 태그명
 					
