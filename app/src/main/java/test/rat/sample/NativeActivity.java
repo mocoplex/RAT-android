@@ -36,9 +36,9 @@ public class NativeActivity extends AppCompatActivity {
 					obj.put("shop_id", "xxx mall"); 		// 샵 아이디
 					obj.put("thumb", "http://상품이미지주소");	// 썸네일 주소 ( http:// https:// 포함 전체 url)
 					
-					obj.put("cate1", "카테고리 정보 1, 소분류");	//카테고리 소분류 (상품카테고리 소분류 : 없을 시 빈 값)
-					obj.put("cate2", "카테고리 정보 2, 중분류");	//카테고리 소분류 (상품카테고리 중분류 : 없을 시 빈 값)
-					obj.put("cate3", "카테고리 정보 3, 대분류");	//카테고리 소분류 (상품카테고리 대분류 : 없을 시 빈 값)
+					obj.put("cate1", "카테고리 정보 1, 대분류");	//카테고리 대분류 (상품카테고리 대분류 : 없을 시 빈 값)
+					obj.put("cate2", "카테고리 정보 2, 중분류");	//카테고리 중분류 (상품카테고리 중분류 : 없을 시 빈 값)
+					obj.put("cate3", "카테고리 정보 3, 소분류");	//카테고리 소분류 (상품카테고리 소분류 : 없을 시 빈 값)
 					
 					obj.put("regular_price", "12300"); 		// 정상 가격 (정상가 미할인 가격 : 없을 시 빈 값) : 숫자만
 					obj.put("discount", ""); 				// 세일 가격 (없을 시 빈값) : 숫자만
@@ -74,9 +74,9 @@ public class NativeActivity extends AppCompatActivity {
 					obj.put("shop_id", "xxx mall"); 		// 샵 아이디
 					obj.put("thumb", "http://상품이미지주소");	// 썸네일 주소 ( http:// https:// 포함 전체 url)
 					
-					obj.put("cate1", "카테고리 정보 1, 소분류");	//카테고리 소분류 (상품카테고리 소분류 : 없을 시 빈 값)
-					obj.put("cate2", "카테고리 정보 2, 중분류");	//카테고리 소분류 (상품카테고리 중분류 : 없을 시 빈 값)
-					obj.put("cate3", "카테고리 정보 3, 대분류");	//카테고리 소분류 (상품카테고리 대분류 : 없을 시 빈 값)
+					obj.put("cate1", "카테고리 정보 1, 대분류");	//카테고리 대분류 (상품카테고리 대분류 : 없을 시 빈 값)
+					obj.put("cate2", "카테고리 정보 2, 중분류");	//카테고리 중분류 (상품카테고리 중분류 : 없을 시 빈 값)
+					obj.put("cate3", "카테고리 정보 3, 소분류");	//카테고리 소분류 (상품카테고리 소분류 : 없을 시 빈 값)
 					
 					obj.put("regular_price", "12300"); 		// 정상 가격 (정상가 미할인 가격 : 없을 시 빈 값) : 숫자만
 					obj.put("discount", ""); 				// 세일 가격 (없을 시 빈값) : 숫자만
@@ -102,9 +102,9 @@ public class NativeActivity extends AppCompatActivity {
 					obj.put("shop_id", "xxx mall"); 		// 샵 아이디
 					obj.put("thumb", "http://상품이미지주소");	// 썸네일 주소 ( http:// https:// 포함 전체 url)
 					
-					obj.put("cate1", "카테고리 정보 1, 소분류");	//카테고리 소분류 (상품카테고리 소분류 : 없을 시 빈 값)
-					obj.put("cate2", "카테고리 정보 2, 중분류");	//카테고리 소분류 (상품카테고리 중분류 : 없을 시 빈 값)
-					obj.put("cate3", "카테고리 정보 3, 대분류");	//카테고리 소분류 (상품카테고리 대분류 : 없을 시 빈 값)
+					obj.put("cate1", "카테고리 정보 1, 대분류");	//카테고리 대분류 (상품카테고리 대분류 : 없을 시 빈 값)
+					obj.put("cate2", "카테고리 정보 2, 중분류");	//카테고리 중분류 (상품카테고리 중분류 : 없을 시 빈 값)
+					obj.put("cate3", "카테고리 정보 3, 소분류");	//카테고리 소분류 (상품카테고리 소분류 : 없을 시 빈 값)
 					
 					obj.put("regular_price", "12300"); 		// 정상 가격 (정상가 미할인 가격 : 없을 시 빈 값) : 숫자만
 					obj.put("discount", ""); 				// 세일 가격 (없을 시 빈값) : 숫자만
@@ -140,9 +140,9 @@ public class NativeActivity extends AppCompatActivity {
 					obj.put("shop_id", "xxx mall"); 		// 샵 아이디
 					obj.put("thumb", "http://상품이미지주소");	// 썸네일 주소 ( http:// https:// 포함 전체 url)
 					
-					obj.put("cate1", "카테고리 정보 1, 소분류");	//카테고리 소분류 (상품카테고리 소분류 : 없을 시 빈 값)
-					obj.put("cate2", "카테고리 정보 2, 중분류");	//카테고리 소분류 (상품카테고리 중분류 : 없을 시 빈 값)
-					obj.put("cate3", "카테고리 정보 3, 대분류");	//카테고리 소분류 (상품카테고리 대분류 : 없을 시 빈 값)
+					obj.put("cate1", "카테고리 정보 1, 대분류");	//카테고리 대분류 (상품카테고리 대분류 : 없을 시 빈 값)
+					obj.put("cate2", "카테고리 정보 2, 중분류");	//카테고리 중분류 (상품카테고리 중분류 : 없을 시 빈 값)
+					obj.put("cate3", "카테고리 정보 3, 소분류");	//카테고리 소분류 (상품카테고리 소분류 : 없을 시 빈 값)
 					
 					obj.put("regular_price", "12300"); 		// 정상 가격 (정상가 미할인 가격 : 없을 시 빈 값) : 숫자만
 					obj.put("discount", ""); 				// 세일 가격 (없을 시 빈값) : 숫자만
@@ -168,9 +168,9 @@ public class NativeActivity extends AppCompatActivity {
 					obj.put("shop_id", "xxx mall"); 		// 샵 아이디
 					obj.put("thumb", "http://상품이미지주소");	// 썸네일 주소 ( http:// https:// 포함 전체 url)
 					
-					obj.put("cate1", "카테고리 정보 1, 소분류");	//카테고리 소분류 (상품카테고리 소분류 : 없을 시 빈 값)
-					obj.put("cate2", "카테고리 정보 2, 중분류");	//카테고리 소분류 (상품카테고리 중분류 : 없을 시 빈 값)
-					obj.put("cate3", "카테고리 정보 3, 대분류");	//카테고리 소분류 (상품카테고리 대분류 : 없을 시 빈 값)
+					obj.put("cate1", "카테고리 정보 1, 대분류");	//카테고리 대분류 (상품카테고리 대분류 : 없을 시 빈 값)
+					obj.put("cate2", "카테고리 정보 2, 중분류");	//카테고리 중분류 (상품카테고리 중분류 : 없을 시 빈 값)
+					obj.put("cate3", "카테고리 정보 3, 소분류");	//카테고리 소분류 (상품카테고리 소분류 : 없을 시 빈 값)
 					
 					obj.put("regular_price", "12300"); 		// 정상 가격 (정상가 미할인 가격 : 없을 시 빈 값) : 숫자만
 					obj.put("discount", ""); 				// 세일 가격 (없을 시 빈값) : 숫자만
