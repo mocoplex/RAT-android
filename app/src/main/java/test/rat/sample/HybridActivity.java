@@ -17,7 +17,7 @@ public class HybridActivity extends AppCompatActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.hybrid_main);
 
 		// 메인페이지를 웹뷰에서 로드합니다.
 		m_webView = (WebView)findViewById(R.id.webView);
